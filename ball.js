@@ -2,7 +2,7 @@
  * @Author: steven
  * @Date:   2017-08-23 11:07:37
  * @Last Modified by:   steve
- * @Last Modified time: 2017-08-23 11:12:52
+ * @Last Modified time: 2017-08-24 15:37:39
  */
 // 球
 var Ball = function() {
@@ -35,6 +35,10 @@ var Ball = function() {
     o.bounce = function() {
         o.speedY *= -1
     }
-
+    o.hasPoint = function(x, y) {
+        var xIn = x >= o.x && x <= o.x + o.image.width
+        var yIn = y >= o.y && y <= o.y + o.image.height
+        return xIn && yIn
+    }
     return o
 }
